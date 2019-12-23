@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Email Verification</string>
+    <string name="forgot_pass">Forgot Password?</string>
+</resources>
