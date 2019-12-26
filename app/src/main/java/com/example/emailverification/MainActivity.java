@@ -3,8 +3,12 @@ package com.example.emailverification;
         import androidx.appcompat.app.AppCompatActivity;
         import android.content.Intent;
         import android.os.Bundle;
+        import android.text.method.HideReturnsTransformationMethod;
+        import android.text.method.PasswordTransformationMethod;
         import android.view.View;
         import android.widget.Button;
+        import android.widget.CheckBox;
+        import android.widget.CompoundButton;
         import android.widget.EditText;
         import android.widget.Toast;
 
@@ -12,6 +16,8 @@ package com.example.emailverification;
 public class MainActivity extends AppCompatActivity {
     EditText e1,e2,e3;
     Button b1;
+    CheckBox show1;
+    CheckBox show2;
 
 
     DataHelper db;
@@ -24,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         e2 = findViewById(R.id.pass);
         e3 = findViewById(R.id.cpass);
         b1 = findViewById(R.id.register);
+        show1= findViewById(R.id.show1);
+        show2 = findViewById(R.id.show2);
+
 
         final String emailPattern = "(.+)\\.+[a-zA-Z0-9._-]+@(.+)$";
         //below pattern says 1 digit,uppercase,lowercase,no whitespace,atleast 8 chars
@@ -99,5 +108,30 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
+
         });
+        show1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean b) {
+                if(b){
+                    e2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else{
+                    e2.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+
+            }
+        });
+        show2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean b) {
+                if(b){
+                    e3.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else{
+                    e3.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+
+            }
+        });
+
+
     }}

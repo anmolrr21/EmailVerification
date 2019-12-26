@@ -17,8 +17,6 @@ public class mylogin extends AppCompatActivity implements View.OnClickListener {
         Button b3 = (Button) findViewById(R.id.logout);
         b3.setOnClickListener(this);
 
-        Button b4 = (Button) findViewById(R.id.fpass);
-        b4.setOnClickListener(this);
 
 
         //String s=findViewById(R.id.fpass).toString();
@@ -31,7 +29,7 @@ public class mylogin extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
 
         Button b3 = (Button) findViewById(R.id.logout);
-        Button b4=(Button)findViewById(R.id.fpass);
+
 
         switch (view.getId()) {
 //
@@ -46,7 +44,7 @@ public class mylogin extends AppCompatActivity implements View.OnClickListener {
 
                 break;
 
-            case R.id.fpass:
+
 
 //                b4.setOnClickListener(new View.OnClickListener() {
 //                    @Override
